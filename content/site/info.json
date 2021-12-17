@@ -1,5 +1,11 @@
 {
-  "sitename": "Clínica Marquez Amo",
-  "sitedescription": "Clínica Marquez Amo",
-  "sitelang": "es-ES"
+  "en": {
+    "sitename": "Clínica Márquez Amo",
+    "sitedescription": "Clínica del Doctor Iker Márquez Ambridge en Madrid"
+  },
+  "es": {
+    "sitename": "Márquez Amo Dental Clinic",
+    "sitedescription": "Dr. Iker James M. Ambridge clinic in Madrid",
+    "sitelang": "es"
+  }
 }
