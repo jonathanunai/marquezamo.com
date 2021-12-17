@@ -1,7 +1,6 @@
 site_url: https://ecstatic-meitner-2fc787.netlify.app/
 logo_url: https://ecstatic-meitner-2fc787.netlify.app/android-chrome-192x192.png
 
-publish_mode: editorial_workflow
 backend:
   name: git-gateway
   branch: master
@@ -13,27 +12,39 @@ local_backend: true
 media_folder: static/img
 public_folder: /img
 
+i18n:
+  structure: single_file
+  locales: [en, es]
+  default_locale: es
+
 # Docs: https://www.netlifycms.org/docs/configuration-options/#collections
 collections:
-  - label: 'Site settings'
+  - label: 'Configurción de la página'
     name: 'site'
+    i18n: true
     files:
-      - label: 'Info'
+      - label: 'Información'
         name: 'info'
         file: 'content/site/info.json'
         format: 'json'
-        editor:
-          preview: false
+        i18n: true
         fields:
-          - { label: Site Name, name: sitename, widget: string, hint: 'This is used for the site title' }
           - {
-              label: Site Description,
-              name: sitedescription,
+              label: Nombre de la web,
+              name: sitename,
               widget: string,
-              hint: 'This is used as descriptive text for links that link to this site',
+              hint: 'This is used for the site title',
+              i18n: true,
             }
           - {
-              label: Site Language,
+              label: Descripción de la clínica,
+              name: sitedescription,
+              widget: string,
+              hint: 'Describe la clínica',
+              i18n: true,
+            }
+          - {
+              label: Idioma del sitio,
               name: sitelang,
               widget: string,
               pattern: ['^[a-z]{2}([-])?([A-Za-z]{2})?$', 'Must match "xx" or "xx-XX" syntax (ex. "en" or "sv-SE")'],
