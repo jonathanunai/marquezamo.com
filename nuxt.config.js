@@ -42,6 +42,7 @@ export default {
         as: 'style',
         href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'
       },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap',
@@ -76,7 +77,25 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxt/content', 'nuxt-purgecss'],
+  modules: ['@nuxt/content', 'nuxt-purgecss',     [
+    '@nuxtjs/i18n',
+    {     
+      locales: ['en', 'es'],
+      defaultLocale: 'es',
+      vueI18n: {
+        fallbackLocale: 'es',
+        messages: {
+          en: {
+            welcome: 'Welcome'
+          },
+          es: {
+            welcome: 'Bienvenido'
+          }
+        }
+      } 
+    }
+  ]
+],
   /*
    ** Build configuration
    */

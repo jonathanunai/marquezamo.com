@@ -1,8 +1,13 @@
 <template>
   <main>
     <section class="self-center flex flex-col flex-1 items-center justify-center">
-      <img src="/img/logo-marquez-amo.jpg" alt="" />
-      <h2 class="subtitle text-center">{{ site.sitename }}</h2>
+      <img src="/img/icon.png" alt="" />
+      <h2 class="subtitle text-center">{{ site[this.$i18n.locale].sitename }}</h2>
+      <ul>
+        <li>info@marquezamo.com</li>
+        <li>914 429 097</li>
+        <li>Calle Cea Bermudez, 58, 1dcha <br />28003 Madrid</li>
+      </ul>
     </section>
   </main>
 </template>
@@ -18,5 +23,26 @@ export default {
     site = site[0]
     return { site }
   },
+  head() {
+    return {
+      title: this.site[this.$i18n.locale].sitename,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.site[this.$i18n.locale].sitedescription,
+        },
+      ],
+    }
+  },
 }
 </script>
+<style>
+ul {
+  margin-top: 1rem;
+}
+li {
+  margin-bottom: 0.3rem;
+}
+</style>
