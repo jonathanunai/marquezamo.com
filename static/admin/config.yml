@@ -44,8 +44,8 @@ collections:
               i18n: true,
             }
           - { label: Dirección física, name: siteaddress, widget: string, hint: 'calle...', i18n: true }
-          - { label: Teléfono, name: sitephone, widget: string, hint: '91...', i18n: true }
-          - { label: Correo electrónico, name: siteemail, widget: string, hint: 'nombre@example.com', i18n: true }
+          - { label: Teléfono, name: sitephone, widget: string, hint: '91...', i18n: duplicate }
+          - { label: Correo electrónico, name: siteemail, widget: string, hint: 'nombre@example.com', i18n: duplicate }
   - name: 'projects'
     label: 'Projects'
     label_singular: 'Project'

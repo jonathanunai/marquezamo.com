@@ -4,9 +4,9 @@
       <img src="/img/icon.png" alt="" />
       <h2 class="subtitle text-center">{{ site[this.$i18n.locale].sitename }}</h2>
       <ul>
-        <li>info@marquezamo.com</li>
-        <li>914 429 097</li>
-        <li>Calle Cea Bermudez, 58, 1dcha <br />28003 Madrid</li>
+        <li>{{ site[this.$i18n.locale].siteemail }}</li>
+        <li>{{ site[this.$i18n.locale].sitephone }}</li>
+        <li>{{ site[this.$i18n.locale].siteaddresss }}</li>
       </ul>
     </section>
   </main>
