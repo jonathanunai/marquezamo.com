@@ -19,7 +19,7 @@ i18n:
 
 # Docs: https://www.netlifycms.org/docs/configuration-options/#collections
 collections:
-  - label: 'Configurción de la página'
+  - label: 'Datos de la página'
     name: 'site'
     i18n: true
     files:
@@ -43,7 +43,7 @@ collections:
               hint: 'Describe la clínica',
               i18n: true,
             }
-          - { label: Dirección física, name: siteaddress, widget: string, hint: 'calle...', i18n: true }
+          - { label: Dirección física, name: siteaddress, widget: string, hint: 'calle...', i18n: duplicate }
           - { label: Teléfono, name: sitephone, widget: string, hint: '91...', i18n: duplicate }
           - { label: Correo electrónico, name: siteemail, widget: string, hint: 'nombre@example.com', i18n: duplicate }
   - name: 'projects'
