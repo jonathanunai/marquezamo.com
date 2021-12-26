@@ -1,11 +1,11 @@
 <template>
   <nav class="scrim-bg fixed z-40 top-0 inset-x-0 pt-3 px-3" aria-label="Main Menu">
     <ul class="flex">
-      <li class="flex-1 ml-2">
-        <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
-        <nuxt-link :to="switchLocalePath('es')">Español</nuxt-link>
+      <li class="flex-1 ml-2">{{ locale[this.$i18n.locale].msg }}</li>
+      <li class="flex ml-2">
+        <nuxt-link :to="switchLocalePath('en')"> [Eng] </nuxt-link>
+        <nuxt-link :to="switchLocalePath('es')"> [Esp] </nuxt-link>
       </li>
-      <li class="flex-1 ml-2">Comming soon...</li>
     </ul>
   </nav>
 </template>
@@ -13,6 +13,11 @@
 <script>
 export default {
   name: 'Header',
+  data() {
+    return {
+      locale: { es: { msg: 'Página en construcción...' }, en: { msg: 'Comming soon...' } },
+    }
+  },
 }
 </script>
 

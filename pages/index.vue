@@ -1,18 +1,19 @@
 <template>
   <main>
     <section class="self-center flex flex-col flex-1 items-center justify-center">
-      <img src="/img/icon.png" alt="" />
+      <img :src="logoUrl" alt="" class="site-logo" />
       <h2 class="subtitle text-center">{{ site[this.$i18n.locale].sitename }}</h2>
       <ul>
         <li>{{ site[this.$i18n.locale].siteemail }}</li>
         <li>{{ site[this.$i18n.locale].sitephone }}</li>
-        <li>{{ site[this.$i18n.locale].siteaddresss }}</li>
+        <li>{{ site[this.$i18n.locale].siteaddress }}</li>
       </ul>
     </section>
   </main>
 </template>
 <script>
 export default {
+  name: 'index',
   async asyncData({ $content, error }) {
     let site
     try {
@@ -36,6 +37,11 @@ export default {
       ],
     }
   },
+  computed: {
+    logoUrl() {
+      return this.$colorMode.value === 'light' ? '/img/icon.png' : '/img/icon_dark.png'
+    },
+  },
 }
 </script>
 <style>
@@ -44,5 +50,9 @@ ul {
 }
 li {
   margin-bottom: 0.3rem;
+}
+.site-logo {
+  max-width: 60%;
+  margin-bottom: 3rem;
 }
 </style>
