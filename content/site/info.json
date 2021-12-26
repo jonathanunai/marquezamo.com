@@ -1,7 +1,8 @@
 {
   "en": {
     "sitename": "Dental clinic Márquez Ambridge",
-    "sitedescription": "Dr. Iker James M. Ambridge dental clinic in Madrid"
+    "sitedescription": "Dr. Iker James M. Ambridge dental clinic in Madrid",
+    "siteaddress": "Calle Cea Bermúdez, 58, 1dcha 28003 Madrid"
   },
   "es": {
     "sitename": "Clínica dental Márquez Amo",
@@ -9,6 +10,6 @@
     "sitelang": "es",
     "siteemail": "info@marquezamo.com",
     "sitephone": "914 429 097",
-    "siteaddress": "Calle Cea Bermudez, 58, 1dcha 28003 Madrid"
+    "siteaddress": "Calle Cea Bermúdez, 58, 1dcha 28003 Madrid"
   }
 }
