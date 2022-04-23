@@ -1,13 +1,19 @@
 <template>
   <main>
+    <hero-section />
     <section class="self-center flex flex-col flex-1 items-center justify-center">
-      <img :src="logoUrl" alt="" class="site-logo" />
+      <p>
+        Esta página está en construcción y en muy poco tiempo podremos ofrecer nuestros servicios aquí mismo. De
+        mientras pueden ponerse en contacto con nostotros aquí:
+      </p>
       <h2 class="subtitle text-center">{{ site[this.$i18n.locale].sitename }}</h2>
+      <img :src="logoUrl" alt="" class="site-logo" />
       <ul>
         <li>{{ site[this.$i18n.locale].siteemail }}</li>
         <li>{{ site[this.$i18n.locale].sitephone }}</li>
         <li>{{ site[this.$i18n.locale].siteaddress }}</li>
       </ul>
+      <p>Gracias por la comprensión, ¡nos vemos en breve!</p>
     </section>
   </main>
 </template>
@@ -44,15 +50,24 @@ export default {
   },
 }
 </script>
-<style>
+<style scoped>
+main {
+  padding: 0 1rem;
+}
 ul {
-  margin-top: 1rem;
+  margin: 2rem;
+  color: #512882;
 }
 li {
   margin-bottom: 0.3rem;
+  text-align: center;
+}
+p {
+  font-size: 1.2rem;
+  text-align: center;
 }
 .site-logo {
-  max-width: 60%;
-  margin-bottom: 3rem;
+  max-width: 140px;
+  margin: 1rem;
 }
 </style>

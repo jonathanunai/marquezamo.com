@@ -1,10 +1,11 @@
 <template>
-  <nav class="scrim-bg fixed z-40 top-0 inset-x-0 pt-3 px-3" aria-label="Main Menu">
+  <nav class="nav fixed z-40 top-0 inset-x-0 p-1" aria-label="Main Menu">
     <ul class="flex">
-      <li class="flex-1 ml-2">{{ locale[this.$i18n.locale].msg }}</li>
-      <li class="flex ml-2">
-        <nuxt-link :to="switchLocalePath('en')"> [Eng] </nuxt-link>
-        <nuxt-link :to="switchLocalePath('es')"> [Esp] </nuxt-link>
+      <li class="flex ml-2"><img src="/img/small-logo.png" alt="" class="h-10" /></li>
+      <li class="flex-1 ml-2 flex flex-row"><span>CLÍNICA DENTAL</span><span>Márquez-Amo</span></li>
+      <li class="flex ml-2 text-right">
+        <nuxt-link :to="switchLocalePath('en')"> [En] </nuxt-link>
+        <nuxt-link :to="switchLocalePath('es')"> [Es] </nuxt-link>
       </li>
     </ul>
   </nav>
@@ -22,37 +23,44 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.div {
-  display: block;
-  position: relative;
-  top: -2px;
-  height: 50px;
-  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="rgba(58, 0, 174, 1)" d="M 0 50 C 357 50 357 424 714 424 L 714 424 L 714 0 L 0 0 Z" stroke-width="0"></path> <path fill="rgba(58, 0, 174, 1)" d="M 713 424 C 1076.5 424 1076.5 50 1440 50 L 1440 50 L 1440 0 L 713 0 Z" stroke-width="0"></path> </svg>');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 @media (max-width: 1439px) {
   .div {
     background-size: contain;
   }
 }
-
-.scrim-bg {
+ul {
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+nav {
+  height: var(--header-height);
+  align-items: center;
+  display: flex;
+  background: #ffffff;
+}
+.scrim-bg-none {
   &::before {
     content: '';
     z-index: -1;
-    background-color: var(--bg);
-    @apply absolute bottom-0 inset-x-0 h-12 mb-4 transition-colors duration-200 ease-in-out;
+    background-color: #fff;
+    @apply absolute top-0 inset-x-0 h-12 transition-all duration-500 ease-in-out;
   }
   &::after {
     content: '';
     z-index: -1;
     opacity: 1;
     animation: fadeIn1 500ms ease-in-out;
-    margin-bottom: -4.75rem;
-    @apply pointer-events-none absolute bottom-0 inset-x-0 h-16;
+    margin-bottom: -4rem;
+    @apply pointer-events-none absolute bottom-0 inset-x-0 h-16 transition-all duration-500 ease-in-out;
     background: linear-gradient(to bottom, #111827, cubic-bezier(0.15, 0, 0.45, 1), transparent);
+  }
+  img {
+    position: absolute;
+    padding-top: 4rem;
+    padding-left: 2rem;
+    height: auto;
   }
 }
 .nuxt-link-exact-active {
@@ -60,7 +68,7 @@ export default {
 }
 
 .light {
-  & .scrim-bg {
+  & .scrim-bg-none {
     &::after {
       animation-name: fadeIn2;
       background: linear-gradient(to bottom, #e5e7eb, cubic-bezier(0.15, 0, 0.45, 1), transparent);
@@ -68,6 +76,11 @@ export default {
   }
   & .nuxt-link-exact-active {
     @apply text-primary-700 border-gray-600 bg-gray-100;
+  }
+}
+@screen md {
+  nav {
+    height: var(--header-height-desktop);
   }
 }
 
